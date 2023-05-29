@@ -1,6 +1,7 @@
 import React from "react";
 
-function Cards() {
+function Cards({ courses }) {
+  console.log("Printing Courses", courses.data);
   return <div>Cards</div>;
 }
 

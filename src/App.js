@@ -15,7 +15,7 @@ const App = () => {
     try {
       const output = await fetch(apiUrl);
       const res = await output.json();
-      setCourses(res);
+      setCourses(res.data);
     } catch (error) {
       toast.error("Network Error");
     }

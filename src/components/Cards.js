@@ -1,8 +1,25 @@
 import React from "react";
+import Card from "./Card.js";
 
 function Cards({ courses }) {
-  console.log("Printing Courses", courses.data);
-  return <div>Cards</div>;
+  function getCourses() {
+    let allCoures = [];
+    Object.values(courses).forEach((arr) => {
+      arr.forEach((item) => {
+        allCoures.push(item);
+      });
+    });
+
+    return allCoures;
+  }
+
+  return (
+    <div>
+      {getCourses().map((course) => {
+        return <Card key={course.id} course={course} />;
+      })}
+    </div>
+  );
 }
 
 export default Cards;
